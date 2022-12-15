@@ -16,10 +16,12 @@
     "react": "^18.2.0",
     "react-awesome-reveal": "^4.1.0",
     "react-dom": "^18.2.0",
-    "react-firebase-hooks": "^5.0.3",
+    "react-firebase-hooks": "^5.1.1",
+    "react-hook-form": "^7.40.0",
     "react-icons": "^4.4.0",
     "react-router-dom": "^6.4.2",
     "react-scripts": "5.0.1",
+    "react-toastify": "^9.1.1",
     "swiper": "^8.4.5",
     "typescript": "^4.8.4",
     "web-vitals": "^2.1.4"
