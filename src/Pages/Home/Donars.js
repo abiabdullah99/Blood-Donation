@@ -11,8 +11,8 @@ const Donars = () => {
 
     console.log(donars);
     return (
-        <div>
-            <div className='font-mono mt-28'>
+        <div className='bg-primary'>
+            <div className='font-mono mt-28 '>
                 <h1 className='text-primary font-bold text-3xl text-center'>Our Latest Donars</h1>
                 <p className='text-md text-center'>Together We Can Make World More Health & Better</p>
             </div>

@@ -11,6 +11,7 @@
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
     "daisyui": "^2.31.0",
+    "date-fns": "^2.29.3",
     "firebase": "^9.11.0",
     "framer-motion": "^7.6.19",
     "react": "^18.2.0",

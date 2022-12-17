@@ -5,11 +5,25 @@
   top: 0;
   width: 100%;
   height: 100%;
-  width: 100%;
-  height: 100%;
   left: 0;
   top: 0;
   background-image: linear-gradient(60deg, #722ab5e4, #16264ac1, #6d1851eb);
+}
+.Profile-bg{
+  background-image: linear-gradient(60deg, #722ab5e4, #16264ac1, #6d1851eb);
+
+}
+.RequesBgImg::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 63%;
+  left: 0;
+  top: 0;
+  background: #0c1427e4;
+  z-index: -2;
 }
 
 .exploreBtn {
@@ -34,12 +48,13 @@
   border: 2px solid #fb4051;
   transition: 0.3s linear;
   font-weight: 800;
+  cursor: pointer;
 }
 .donateBtn:hover {
   background: transparent;
 }
 
-.BtnPurple{
+.BtnPurple {
   color: white;
   background: linear-gradient(60deg, #722ab5e4, #16264ac1, #6d1851eb);
   padding: 12px 25px;
@@ -93,14 +108,17 @@
   z-index: -2;
 }
 .title {
-  left: 38%;
+  left: 42%;
   z-index: 2;
   position: absolute;
 }
 
-
 .nav-bg {
-  background-image: linear-gradient(60deg,#16264ac1, #160730c6, #6d1851eb);
+  background-image: linear-gradient(60deg, #16264ac1, #160730c6, #6d1851eb);
+}
+
+.ModalBg {
+  background-image: linear-gradient(60deg, #16264af6, #160730f4, #6d1851f8);
 }
 
 /* Accounts Styling  */

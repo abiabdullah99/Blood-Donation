@@ -1,17 +1,17 @@
 import React from 'react';
 
-const Location = () => {
+const Location = ({filterItemData}) => {
     return (
         <div>
             <div className='flex items-center'>
                 <div className="form-control bg-transparent w-full max-w-xs">
                     <select className="select select-bordered text-lg border-2 border-primary font-mono text-white bg-primary">
-                        <option className='text-md text-white bg-primary' selected>Select A District</option>
-                        <option className='text-lg text-white' value="Bagerhat">Bagerhat</option>
+                        <option className='text-md text-white' selected>Select A District</option>
+                        <option onClick={() => filterItemData("Bagerhat")} className='text-lg text-white' value="Bagerhat">Bagerhat</option>
                         <option className='text-lg text-white' value="Bandarban">Bandarban</option>
                         <option className='text-lg text-white' value="Barguna">Barguna</option>
                         <option className='text-lg text-white' value="Barisal">Barisal</option>
-                        <option className='text-lg text-white' value="Bhola">Bhola</option>
+                        <option onClick={() => filterItemData("Bhola")} className='text-lg text-white' value="Bhola">Bhola</option>
                         <option className='text-lg text-white' value="Bogra">Bogra</option>
                         <option className='text-lg text-white' value="Brahmanbaria">Brahmanbaria</option>
                         <option className='text-lg text-white' value="Chandpur">Chandpur</option>
