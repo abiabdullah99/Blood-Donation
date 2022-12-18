@@ -5,7 +5,7 @@ const ErrorPag = () => {
     return (
         <div className='font-mono'>
             <div>
-                <img className='mx-auto mt-10' src={ErrorPage} alt="" />
+                <img className='mx-auto w-7/12 mt-10' src={ErrorPage} alt="" />
             </div>
             <div>
                 <h1 className='text-xl text-center text-primary font-semibold'>Error 404</h1>

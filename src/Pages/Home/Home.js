@@ -3,6 +3,7 @@ import Navbar from '../Shared/Navbar/Navbar';
 import About from './About';
 import Banner from './Banner';
 import Donars from './Donars';
+import Gallery from './Gallery';
 
 const Home = () => {
     return (
@@ -11,6 +12,7 @@ const Home = () => {
             <Banner />
             <About />
             <Donars />
+            <Gallery />
         </div>
     );
 };

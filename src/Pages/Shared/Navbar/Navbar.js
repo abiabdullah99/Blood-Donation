@@ -18,7 +18,7 @@ const Navbar = () => {
           } flex items-center fixed top-0 w-full px-5 text-white z-10 transition-all duration-300`}
       >
         <div className='w-9/12 mx-auto h-full flex items-center justify-between'>
-          <div className="flex items-center">
+          <div className="flex items-center  -mt-6">
             <img src={logo} className="w-14" alt="" />
             <h1 className="text-2xl text-white font-bold font-mono">BLOOD <span className='text-primary'>AI</span></h1>
           </div>

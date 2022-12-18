@@ -34,7 +34,7 @@ const UpdateProfile = () => {
             education: data.education,
             district: data.district
           };
-          fetch(`https://blood-ai-abiabdullah99.vercel.app/user/update/${user?.email}`, {
+          fetch(`https://blood-ai.vercel.app/user/update/${user?.email}`, {
             method: "PUT",
             headers: {
               "content-type": "application/json",
@@ -43,10 +43,9 @@ const UpdateProfile = () => {
           })
             .then((res) => res.json())
             .then((data) => {
-              if (data.acknowledged) {
-                toast.success("Profile Updated")
-                navigate("/");
-              }
+              navigate("/");
+              toast.success("Profile Updated")
+
             });
         }
       })

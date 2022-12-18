@@ -1,34 +1,45 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import DonarCard from '../Donars/DonarCard';
+import { Slide, Fade } from 'react-awesome-reveal';
 
 const Donars = () => {
 
     const [donars, setDonars] = useState([])
+    const reverseItem = [...donars].reverse();
     useEffect(() => {
-        fetch('user.json')
+        const url = 'https://blood-ai.vercel.app/user';
+        fetch(url)
             .then(res => res.json())
-            .then(data => setDonars(data))
+            .then(data => {
+                setDonars(data)
+            })
     }, [])
 
     console.log(donars);
     return (
-        <div className='bg-primary'>
+        <div className="relative overflow-hidden">
             <div className='font-mono mt-28 '>
-                <h1 className='text-primary font-bold text-3xl text-center'>Our Latest Donars</h1>
-                <p className='text-md text-center'>Together We Can Make World More Health & Better</p>
+                <Slide direction="left" duration={2000}>
+                    <h1 className='text-primary font-bold text-3xl text-center'>Our Latest Donars</h1>
+                </Slide>
+                <Slide direction="right" duration={2000}>
+                    <p className='text-md text-center'>Together We Can Make World More Health & Better</p>
+                </Slide>
+                <h1 className="md:text-[100px] text-4xl absolute left-1/4 top-32 -z-10 text-[#F7F7F7] text-center font-mono font-bold">Latest Donars</h1>
             </div>
             <div>
                 <div class="mx-auto mt-24 grid w-10/12 grid-cols-1 md:grid-cols-3 gap-10 ">
-                    {donars.map(item =>
-                        <div class="flex flex-col bg-white rounded-lg shadow-md items-center pb-10 font-mono">
-                            <img class="w-24 h-24 mb-3 rounded-full shadow-lg" src={item.img} alt="Bonnie" />
-                            <h5 class="mb-1 text-md font-medium text-gray-900">{item.name}</h5>
-                            <span class="text-md text-gray-900">Blood Group: {item.bldGrp}</span>
-                            <h1 className='text-md text-gray-900'>Location: {item.loction}</h1>
-                            <div class="flex mt-4 space-x-3 md:mt-6">
-                                <a href="Detail" class="inline-flex items-center px-4 py-2 donateBtn hover:text-gray-900">Details</a>
-                            </div>
-                        </div>
+                    {reverseItem.slice(0, 6).map(item =>
+                        <DonarCard item={item}></DonarCard>
                     )}
+                </div>
+                <div className='flex justify-center mt-16'>
+                    <a href="#_" class="relative inline-flex items-center justify-center px-10 py-4 overflow-hidden font-mono font-medium tracking-tighter text-white bg-primary rounded-lg group">
+                        <span class="absolute w-0 h-0 transition-all duration-500 ease-out bg-[#502b7c] rounded-full group-hover:w-56 group-hover:h-56"></span>
+                        <span class="absolute inset-0 w-full h-full -mt-1 rounded-lg opacity-30 bg-gradient-to-b from-transparent via-transparent to-gray-700"></span>
+                        <span class="relative"><Link to="/donars">See All Donors</Link></span>
+                    </a>
                 </div>
             </div>
         </div >

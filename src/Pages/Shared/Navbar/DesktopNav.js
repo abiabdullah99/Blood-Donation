@@ -15,13 +15,11 @@ const DesktopNav = () => {
         <li className=' text-white  cursor-pointer'><Link to='/'
             className='transition-all duration-300 uppercase font-semibold'> Home</Link></li>
         <li className=' text-white  cursor-pointer uppercase'><Link to='/donars'
-            className='transition-all duration-300 font-semibold'> Donors</Link></li>
+            className='transition-all duration-300 font-semibold'> Donars</Link></li>
         <li className=' text-white  cursor-pointer uppercase'><Link to='/blog'
             className='transition-all duration-300 font-semibold'>Blogs</Link></li>
         <li className=' text-white  cursor-pointer uppercase'><Link to='/BloodReq'
             className='transition-all duration-300 font-semibold'>Blood Request</Link></li>
-        <li className=' text-white  cursor-pointer uppercase'> <Link to='/contact'
-            className='transition-all duration-300 font-semibold'>CONTACT</Link></li>
         <li>
             {user ? <li className=' text-white  cursor-pointer -mt-2'>
                 {/* Start */}
@@ -39,8 +37,7 @@ const DesktopNav = () => {
                         >
                             <>
                                 <Link className="flex items-center px-3 py-3 cursor-pointer  text-white text-sm focus:outline-none hover:bg-primary hover:text-white rounded-md" to="/myProfile"> My Profile</Link>
-                                <Link className="flex items-center px-3 py-3 cursor-pointer text-white text-sm focus:outline-none hover:bg-primary hover:text-white rounded-md" to="/myBooking"> My Request </Link>
-                                <Link className="flex items-center px-3 py-3 cursor-pointer text-white text-sm focus:outline-none hover:bg-primary hover:text-white rounded-md" to="/addReview">Add Review</Link>
+                                <Link className="flex items-center px-3 py-3 cursor-pointer text-white text-sm focus:outline-none hover:bg-primary hover:text-white rounded-md" to="/myRequest"> My Request </Link>
                             </>
                             <button className="flex w-full items-center px-3 py-3 cursor-pointer  text-white text-sm focus:outline-none hover:bg-primary hover:text-white rounded-md" onClick={logout} >LOGOUT</button>
                         </div>

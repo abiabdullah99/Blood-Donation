@@ -18,7 +18,7 @@ const BloodReq = () => {
                 <div className="w-full flex justify-center mt-6">
                     <button className='donateBtn'><label htmlFor="my-modal-3" className=" uppercase cursor-pointer">Post a Request </label></button>
                     <input type="checkbox" id="my-modal-3" className="modal-toggle" />
-                    <div className="modal mt-10 w-full">
+                    <div className="modal pt-10 w-full">
                         <div className="relative sm:w-96 rounded-lg md:w-[400px] lg:w-[700px] ModalBg">
                             <label htmlFor="my-modal-3" onClick={crossHandle} className=" btn-sm text-white btn-circle absolute right-0 top-3 text-2xl font-bold">✕</label>
                             <PostReqFrom />

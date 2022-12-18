@@ -3,10 +3,10 @@ import { Slide } from 'react-awesome-reveal';
 import AboutImg from '../../Assets/about.png'
 const About = () => {
     return (
-        <div className='w-10/12 mx-auto mt-20 flex items-center justify-between'>
+        <div className='w-10/12 mx-auto mt-20 grid grid-cols-1 items-center md:grid-cols-2'>
             <div className='flex-1'>
                 <Slide direction="left" duration={2000}>
-                    <img src={AboutImg} alt="" />
+                    <img src={AboutImg} className="" alt="" />
                 </Slide>
             </div>
             <div className='mx-auto font-mono flex-1'>

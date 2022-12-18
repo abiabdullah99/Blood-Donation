@@ -17,7 +17,7 @@ if (image) {
 }
 
 if (email) {
-    fetch(`https://blood-ai-abiabdullah99.vercel.app/user/${email}`,{
+    fetch(`https://blood-ai.vercel.app/user/${email}`,{
         method: "PUT",
         headers: {
             'content-type': 'application/json'

@@ -48,10 +48,10 @@ const Banner = () => {
                         <div className='relative'>
                             <img src={item.img} alt="" className='w-full h-screen' />
                             <div className="banner"> </div>
-                            <div className=" absolute top-2/4 left-40 h-24  flex justify-center items-center">
+                            <div className=" absolute top-2/4 md:left-40 left-10 h-24  flex justify-center items-center">
                                 <Slide direction="up" duration={2000}>
                                     <div className="">
-                                        <h1 className="md:text-5xl font-bold font-mono text-white">
+                                        <h1 className="md:text-5xl text-3xl font-bold font-mono text-white">
                                             {item.title}
                                         </h1>
                                         <br />
@@ -59,8 +59,8 @@ const Banner = () => {
                                             <h1 className='text-2xl md:w-10/12 w-full leading-loose font-mono font-medium text-white'>{item.dis}</h1>
                                         </Fade>
                                         <div className='mt-4'>
-                                            <button className='exploreBtn mr-10 mb-3 font-mono uppercase'>Loren More</button>
-                                            <button className='donateBtn font-mono uppercase'><Link to={item.url}>Become a Donars</Link></button>
+                                            <button className='exploreBtn mr-10 mb-3 font-mono uppercase'><Link to="/donars">All Donars</Link></button>
+                                            <button className='donateBtn font-mono uppercase'><Link to="/BloodReq">Blood Request</Link></button>
                                         </div>
                                     </div>
                                 </Slide>

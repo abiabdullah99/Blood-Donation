@@ -3,14 +3,17 @@ import donorsImg from '../../Assets/donors-bg.jpg'
 import BloodGrp from '../../Component/BloodGrp';
 import Location from '../../Component/Location';
 import Navbar from '../Shared/Navbar/Navbar';
+import DonarCard from './DonarCard';
 const Donars = () => {
 
     const [donars, setDonars] = useState([])
     const [filterItem, setFilterItem] = useState([])
 
     const [filterBlood, setFilterBloodGrp] = useState([])
+
+    const reverseItem = [...filterItem].reverse();
     useEffect(() => {
-        const url = 'https://blood-ai-abiabdullah99.vercel.app/user';
+        const url = 'https://blood-ai.vercel.app/user';
         fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -19,7 +22,6 @@ const Donars = () => {
                 setFilterBloodGrp(data)
             })
     }, [])
-
     console.log(filterItem);
 
     const filterItemData = (categItem) => {
@@ -35,14 +37,14 @@ const Donars = () => {
             return item?.bloodGrp === blood;
         });
 
-        setFilterBloodGrp(filterBlood);
+        setFilterItem(filterBlood);
     }
 
-    console.log(filterBlood);
+
     return (
         <div className='font-mono'>
             <Navbar />
-            <div className="mt-60">
+            <div className="md:mt-60 mt-40">
                 <h1 className='text-3xl text-center font-bold text-primary'>Search a Donors</h1>
                 <p className='text-xl text-center font-bold text-white'>Your Donation Can Make Someone’s Life Better</p>
             </div>
@@ -67,6 +69,14 @@ const Donars = () => {
             </div>
             <img className='w-full absolute top-0 -z-10' src={donorsImg} alt="" />
             <div className='img-background'></div>
+
+            <div className='mx-auto mt-20 md:mt-52 grid w-10/12 grid-cols-1 md:grid-cols-3 gap-10 '>
+                {
+                    reverseItem.map(item =>
+                        <DonarCard filterItem={filterBlood} item={item}></DonarCard>
+                    )
+                }
+            </div>
         </div>
     );
 };

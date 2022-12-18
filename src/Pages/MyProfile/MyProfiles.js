@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
 import { HiPencilAlt } from 'react-icons/hi';
 import { FaFacebookSquare, FaUserGraduate, FaTwitterSquare, FaInstagramSquare } from 'react-icons/fa';
@@ -27,7 +26,7 @@ const MyProfiles = () => {
     useEffect(() => {
         const email = user?.email;
         console.log(email);
-        const url = `https://blood-ai-abiabdullah99.vercel.app/user/${email}`
+        const url = `https://blood-ai.vercel.app/user/${email}`
         fetch(url)
             .then(res => res.json())
             .then(data => setUserData(data))
