@@ -12,7 +12,7 @@ const MyReqest = () => {
     const [user] = useAuthState(auth)
     useEffect(() => {
         const email = user?.email
-        const url = `https://blood-ai.vercel.app/myRequest?email=${email}`;
+        const url = `https://blood-donation-ai.onrender.com/myRequest?email=${email}`;
         fetch(url, {
             method: "GET",
         })

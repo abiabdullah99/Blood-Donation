@@ -2,6 +2,7 @@ import { signOut } from "firebase/auth";
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
+import CustomLink from "../../../Component/CustomLink";
 import auth from "../../../firebase.init";
 const DesktopNav = () => {
 
@@ -12,14 +13,14 @@ const DesktopNav = () => {
         navigate('/login')
     }
     const navigation = <>
-        <li className=' text-white  cursor-pointer'><Link to='/'
-            className='transition-all duration-300 uppercase font-semibold'> Home</Link></li>
-        <li className=' text-white  cursor-pointer uppercase'><Link to='/donars'
-            className='transition-all duration-300 font-semibold'> Donars</Link></li>
-        <li className=' text-white  cursor-pointer uppercase'><Link to='/blog'
-            className='transition-all duration-300 font-semibold'>Blogs</Link></li>
-        <li className=' text-white  cursor-pointer uppercase'><Link to='/BloodReq'
-            className='transition-all duration-300 font-semibold'>Blood Request</Link></li>
+        <li className=' text-white text-lg cursor-pointer'><CustomLink to='/'
+            className='transition-all duration-300 uppercase font-semibold'> Home</CustomLink></li>
+        <li className=' text-white text-lg cursor-pointer uppercase'><CustomLink to='/donars'
+            className='transition-all duration-300 font-semibold'> Donars</CustomLink></li>
+        <li className=' text-white text-lg cursor-pointer uppercase'><CustomLink to='/blog'
+            className='transition-all duration-300 font-semibold'>Blogs</CustomLink></li>
+        <li className=' text-white  cursor-pointer uppercase'><CustomLink to='/BloodReq'
+            className='transition-all text-lg duration-300 font-semibold'>Blood Request</CustomLink></li>
         <li>
             {user ? <li className=' text-white  cursor-pointer -mt-2'>
                 {/* Start */}
@@ -36,20 +37,20 @@ const DesktopNav = () => {
                         <div className="uppercase w-48 max-w-screen origin-center appear-done enter-done bg-[#6a30608e] pl-4 rounded-md"
                         >
                             <>
-                                <Link className="flex items-center px-3 py-3 cursor-pointer  text-white text-sm focus:outline-none hover:bg-primary hover:text-white rounded-md" to="/myProfile"> My Profile</Link>
-                                <Link className="flex items-center px-3 py-3 cursor-pointer text-white text-sm focus:outline-none hover:bg-primary hover:text-white rounded-md" to="/myRequest"> My Request </Link>
+                                <CustomLink className="flex items-center px-3 py-3 cursor-pointer  text-white text-sm focus:outline-none hover:bg-primary hover:text-white rounded-md" to="/myProfile"> My Profile</CustomLink>
+                                <CustomLink className="flex items-center px-3 py-3 cursor-pointer text-white text-sm focus:outline-none hover:bg-primary hover:text-white rounded-md" to="/myRequest"> My Request </CustomLink>
                             </>
                             <button className="flex w-full items-center px-3 py-3 cursor-pointer  text-white text-sm focus:outline-none hover:bg-primary hover:text-white rounded-md" onClick={logout} >LOGOUT</button>
                         </div>
                     </ul>
                 </div>
 
-            </li> : <Link
+            </li> : <CustomLink
                 to="/login"
                 className="text-white  cursor-pointer uppercase"
             >
                 Login
-            </Link>}
+            </CustomLink>}
         </li>
     </>
 

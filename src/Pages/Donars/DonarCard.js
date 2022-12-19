@@ -1,6 +1,6 @@
 import React from 'react';
 import { Fade, Slide } from 'react-awesome-reveal';
-const DonarCard = ({ item, filterItem }) => {
+const DonarCard = ({ item }) => {
     return (
         <>
             <Fade direction="top" duration={3000}>

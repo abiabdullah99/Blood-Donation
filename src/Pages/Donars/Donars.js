@@ -5,6 +5,7 @@ import Location from '../../Component/Location';
 import Loading from '../Shared/Loading/Loading';
 import Navbar from '../Shared/Navbar/Navbar';
 import DonarCard from './DonarCard';
+import Pagination from './Pagination';
 const Donars = () => {
 
     const [donars, setDonars] = useState([])
@@ -12,20 +13,17 @@ const Donars = () => {
 
     const [filterBlood, setFilterBloodGrp] = useState([])
 
-    const reverseItem = [...filterItem].reverse();
 
     // Pagination 
-    const [pageCount, setPageCount] = useState(0);
-    const [page, setPage] = useState(0);
-    const [size, setSize] = useState(9);
-
+    const [currentPage, setCurrentPage] = useState(1);
+    const [postsPerPage, setPostsPerPage] = useState(18);
     // loading State
 
     const [loading, setLoading] = useState(false)
 
     useEffect(() => {
         setLoading(true)
-        const url = `https://blood-donation-ai.onrender.com/userPaging?page=${page}&size=${size}`;
+        const url = "https://blood-donation-ai.onrender.com/user";
         fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -34,18 +32,12 @@ const Donars = () => {
                 setFilterBloodGrp(data)
                 setLoading(false)
             })
-    }, [page, size])
-    console.log(filterItem);
+    }, [])
+    console.log(donars);
 
-    useEffect(() => {
-        fetch("https://blood-donation-ai.onrender.com/userCount")
-            .then((res) => res.json())
-            .then((data) => {
-                const count = data.count;
-                const pages = Math.ceil(count / size);
-                setPageCount(pages);
-            });
-    }, [size]);
+    const lastPostIndex = currentPage * postsPerPage;
+    const firstPostIndex = lastPostIndex - postsPerPage;
+    const currentData = filterItem.slice(firstPostIndex, lastPostIndex);
 
     const filterItemData = (categItem) => {
         const updatedItems = donars?.filter((item) => {
@@ -62,6 +54,9 @@ const Donars = () => {
 
         setFilterItem(filterBlood);
     }
+
+    const reverseItem = [...currentData].reverse();
+
 
 
     return (
@@ -86,7 +81,6 @@ const Donars = () => {
                                 </select>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -97,38 +91,24 @@ const Donars = () => {
                     <Loading></Loading>
                 </div>
             )}
-            <div className='mx-auto mt-20 md:mt-52 grid w-10/12 grid-cols-1 md:grid-cols-3 gap-10 '>
+
+            <h1 className='text-2xl font-semibold text-center mt-60 text-primary'>Our Blood Donars</h1>
+            <p className='text-lg text-center text-gray-700'>Find a Blood Donars Contact His Phone Numbers</p>
+            <div className='mx-auto mt-20 grid w-10/12 grid-cols-1 md:grid-cols-3 gap-10 mb-20'>
+            <h1 className="md:text-[100px] text-4xl absolute left-1/3 bottom-8 -z-10 text-[#F7F7F7] text-center font-mono font-bold">Blood Donars</h1>
 
                 {
                     reverseItem.map(item =>
-                        <DonarCard filterItem={filterBlood} item={item}></DonarCard>
+                        <DonarCard filterItem={filterItem} filterBlood={filterBlood} currentData={currentData} item={item}></DonarCard>
                     )
                 }
             </div>
-            <div className="flex justify-center flex-wrap mt-20">
-                <div className="btn-group gap-2">
-                    {[...Array(pageCount).keys()].map((number) => (
-                    <button
-                        onClick={() => setPage(number)}
-                        className={
-                            page === number
-                                ? "bg-red-500  btn border-none text-white"
-                                : "btn  rounded border-none text-black"
-                        }
-                    >
-                        {number + 1}
-                    </button>
-                    ))}
-                    <select className='pl-4 bg-primary text-white' onChange={(e) => setSize(e.target.value)}>
-                        <option value="6">6</option>
-                        <option value="9" selected>
-                            9
-                        </option>
-                        <option value="18">18</option>
-                        <option value="27">27</option>
-                    </select>
-                </div>
-            </div>
+            <Pagination
+                totalItem={filterItem?.length}
+                postsPerPage={postsPerPage}
+                setCurrentPage={setCurrentPage}
+                currentPage={currentPage}
+            />
         </div>
     );
 };
