@@ -20,12 +20,12 @@ const Donars = () => {
     return (
         <div className="relative overflow-hidden">
             <div className='font-mono mt-28 '>
-                <Slide direction="left" duration={2000}>
+                {/* <Slide direction="left" duration={2000}> */}
                     <h1 className='text-primary font-bold text-3xl text-center'>Our Latest Donars</h1>
-                </Slide>
-                <Slide direction="right" duration={2000}>
+                {/* </Slide> */}
+                {/* <Slide direction="right" duration={2000}> */}
                     <p className='text-md text-center'>Together We Can Make World More Health & Better</p>
-                </Slide>
+                {/* </Slide> */}
                 <h1 className="md:text-[100px] text-4xl absolute left-1/4 top-32 -z-10 text-[#F7F7F7] text-center font-mono font-bold">Latest Donars</h1>
             </div>
             <div>

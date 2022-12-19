@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import BloodReq from './Pages/BlodReq/BloodReq';
+import Blog from './Pages/Blog/Blog';
 import Donars from './Pages/Donars/Donars';
 import Home from './Pages/Home/Home';
 import MyProfiles from './Pages/MyProfile/MyProfiles';
@@ -22,6 +23,7 @@ const App = () => {
         <Route path='/BloodReq' element={<BloodReq />}></Route>
         <Route path='/myProfile' element={<MyProfiles />}></Route>
         <Route path='/myRequest' element={<MyReqest />}></Route>
+        <Route path='/blog' element={<Blog />}></Route>
         <Route path='*' element={<ErrorPag />}></Route>
       </Routes>
       <ToastContainer />

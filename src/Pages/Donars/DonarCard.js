@@ -3,7 +3,7 @@ import { Slide } from 'react-awesome-reveal';
 const DonarCard = ({ item, filterItem }) => {
     return (
         <>
-            <Slide direction="bottom" duration={2000}>
+            {/* <Slide direction="bottom" duration={2000}> */}
                 <div>
                     <div
                         class="rounded-2xl bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-1 shadow-xl font-mono"
@@ -53,7 +53,7 @@ const DonarCard = ({ item, filterItem }) => {
                         </a>
                     </div>
                 </div>
-            </Slide>
+            {/* </Slide> */}
         </>
     );
 };
