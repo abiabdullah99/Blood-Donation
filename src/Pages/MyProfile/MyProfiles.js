@@ -26,7 +26,7 @@ const MyProfiles = () => {
     useEffect(() => {
         const email = user?.email;
         console.log(email);
-        const url = `https://blood-ai.vercel.app/user/${email}`
+        const url = `https://blood-donation-ai.onrender.com/user/${email}`
         fetch(url)
             .then(res => res.json())
             .then(data => setUserData(data))

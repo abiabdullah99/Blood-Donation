@@ -18,7 +18,7 @@ const PostReqFrom = () => {
             district: data.district,
             date: data.date,
         };
-        fetch(`https://blood-ai.vercel.app/bloodReq`, {
+        fetch(`https://blood-donation-ai.onrender.com/bloodReq`, {
             method: "POST",
             headers: {
                 "content-type": "application/json",

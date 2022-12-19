@@ -2,17 +2,20 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import DonarCard from '../Donars/DonarCard';
 import { Slide, Fade } from 'react-awesome-reveal';
+import Loading from '../Shared/Loading/Loading';
 
 const Donars = () => {
-
+    const [loading, setLoading] = useState(false)
     const [donars, setDonars] = useState([])
     const reverseItem = [...donars].reverse();
     useEffect(() => {
-        const url = 'https://blood-ai.vercel.app/user';
+        setLoading(true)
+        const url = 'https://blood-donation-ai.onrender.com/user';
         fetch(url)
             .then(res => res.json())
             .then(data => {
                 setDonars(data)
+                setLoading(false)
             })
     }, [])
 
@@ -20,15 +23,20 @@ const Donars = () => {
     return (
         <div className="relative overflow-hidden">
             <div className='font-mono mt-28 '>
-                {/* <Slide direction="left" duration={2000}> */}
+                <Slide direction="left" duration={2000}>
                     <h1 className='text-primary font-bold text-3xl text-center'>Our Latest Donars</h1>
-                {/* </Slide> */}
-                {/* <Slide direction="right" duration={2000}> */}
+                </Slide>
+                <Slide direction="right" duration={2000}>
                     <p className='text-md text-center'>Together We Can Make World More Health & Better</p>
-                {/* </Slide> */}
+                </Slide>
                 <h1 className="md:text-[100px] text-4xl absolute left-1/4 top-32 -z-10 text-[#F7F7F7] text-center font-mono font-bold">Latest Donars</h1>
             </div>
             <div>
+            {loading && (
+                <div className="mt-10">
+                    <Loading></Loading>
+                </div>
+            )}
                 <div class="mx-auto mt-24 grid w-10/12 grid-cols-1 md:grid-cols-3 gap-10 ">
                     {reverseItem.slice(0, 6).map(item =>
                         <DonarCard item={item}></DonarCard>

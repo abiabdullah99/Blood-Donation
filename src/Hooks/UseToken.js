@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 
-const useToken = (user:any) => {
+const useToken = (user) => {
 const [token, setToken] = useState('');
 
 useEffect(() => {
@@ -17,7 +17,7 @@ if (image) {
 }
 
 if (email) {
-    fetch(`https://blood-ai.vercel.app/user/${email}`,{
+    fetch(`https://blood-donation-ai.onrender.com/user/${email}`,{
         method: "PUT",
         headers: {
             'content-type': 'application/json'

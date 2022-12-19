@@ -26,7 +26,7 @@ const MyReqest = () => {
     const handleDeleteMessage = (id) => {
         const proced = window.confirm("Are Your Sure Delete This Message");
         if (proced) {
-            const url = `https://blood-ai.vercel.app/bloodReq/${id}`;
+            const url = `https://blood-donation-ai.onrender.com/bloodReq/${id}`;
             fetch(url, {
                 method: "DELETE",
             })
